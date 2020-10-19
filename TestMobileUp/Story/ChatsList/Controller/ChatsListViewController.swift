@@ -17,7 +17,13 @@ final class ChatsListViewController: BaseVC {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-     
+                
+                let chatsListAreNotEmpty = self.chatsList.isNotEmpty
+                
+                self.emptyViewActivityIndicator.isHidden = chatsListAreNotEmpty
+                self.emptyViewLabel.isHidden = chatsListAreNotEmpty
+                self.tableView.isHidden = !chatsListAreNotEmpty
+                
                 self.tableView.reloadData()
             }
         }
@@ -25,7 +31,9 @@ final class ChatsListViewController: BaseVC {
     
     //MARK: - private propertys
     private lazy var tableView = UITableView()
-
+    private lazy var refreshControl = UIRefreshControl()
+    private lazy var emptyViewActivityIndicator = UIActivityIndicatorView(style: .medium)
+    private lazy var emptyViewLabel = UILabel()
 
     //MARK: - method lIfecycle
     override func viewDidLoad() {
@@ -82,23 +90,42 @@ private extension ChatsListViewController {
         view.backgroundColor = .systemBackground
         
         configureNavigationBar(largeTitleColor: .black, backgoundColor: .tintBlue(), tintColor: .red, title: StringConstants.title, preferredLargeTitle: true)
-
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        tableView.backgroundColor = nil
         tableView.tableFooterView = UIView()
+        tableView.refreshControl = refreshControl
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: CellType.nibName, bundle: nil), forCellReuseIdentifier: CellType.reuseIdentifier)
-
-
-            view.addSubview(tableView)
-   
-        NSLayoutConstraint.activate(tableView.edgeConstraints(to: view.safeAreaLayoutGuide))
+        tableView.isHidden = true
+        
+        emptyViewLabel.font = .systemFont(ofSize: 18, weight: .light)
+        emptyViewLabel.textColor = .tintGray()
+        emptyViewLabel.textAlignment = .center
+        emptyViewLabel.text = StringConstants.loading
+        
+        emptyViewActivityIndicator.startAnimating()
+        
+        [tableView, emptyViewLabel, emptyViewActivityIndicator].forEach {
+            view.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        var constraints = [NSLayoutConstraint]()
+        constraints.append(contentsOf: tableView.edgeConstraints(to: view.safeAreaLayoutGuide))
+        constraints.append(contentsOf: emptyViewActivityIndicator.centerConstraints(to: tableView))
+        constraints.append(contentsOf: [
+            emptyViewLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 64),
+            emptyViewLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -64),
+            emptyViewLabel.topAnchor.constraint(equalTo: emptyViewActivityIndicator.bottomAnchor, constant: 5),
+        ])
+        NSLayoutConstraint.activate(constraints)
     }
     
     func loadChatsList() {
         
         Networking.getChat(onSuccess: { [weak self] receivedСhatsList in
             guard let self = self else { return }
-            print(receivedСhatsList)
             self.chatsList = receivedСhatsList.map{$0}
         },
         onFailure: { [weak self] error in
@@ -149,4 +176,11 @@ private extension ChatsListViewController {
             }
         )
     }
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        loadChatsList()
+        tableView.reloadData()
+        sender.endRefreshing()
+    }
+    
 }
