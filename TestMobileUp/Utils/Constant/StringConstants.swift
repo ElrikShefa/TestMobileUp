@@ -7,7 +7,8 @@
 //
 
 struct StringConstants {
-
+    
+    static let title = "Messages"
     static let alertButton = "Close"
     static let errorTitle = "Error has occured"
 }

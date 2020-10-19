@@ -16,6 +16,10 @@
 		B933A7FC253E2134007C85BD /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7FB253E2134007C85BD /* StringConstants.swift */; };
 		B933A801253E219D007C85BD /*  Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A800253E219D007C85BD /*  Array+Extension.swift */; };
 		B933A808253E21F3007C85BD /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A807253E21F3007C85BD /* Collection+Extension.swift */; };
+		B933A810253E23C2007C85BD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A80F253E23C2007C85BD /* View+Extension.swift */; };
+		B933A813253E23E7007C85BD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A812253E23E7007C85BD /* String+Extension.swift */; };
+		B933A816253E252F007C85BD /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A815253E252F007C85BD /* ViewController+Extension.swift */; };
+		B933A819253E25A7007C85BD /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A818253E25A7007C85BD /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		B933A7FB253E2134007C85BD /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		B933A800253E219D007C85BD /*  Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Array+Extension.swift"; sourceTree = "<group>"; };
 		B933A807253E21F3007C85BD /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		B933A80F253E23C2007C85BD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		B933A812253E23E7007C85BD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B933A815253E252F007C85BD /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		B933A818253E25A7007C85BD /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +92,7 @@
 		B933A7F3253E1F97007C85BD /* Story */ = {
 			isa = PBXGroup;
 			children = (
-				B933A7DD253E1CC6007C85BD /* ChatsListViewController.swift */,
+				B933A80D253E22D4007C85BD /* ChatsList */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -112,8 +120,28 @@
 			children = (
 				B933A800253E219D007C85BD /*  Array+Extension.swift */,
 				B933A807253E21F3007C85BD /* Collection+Extension.swift */,
+				B933A80F253E23C2007C85BD /* View+Extension.swift */,
+				B933A812253E23E7007C85BD /* String+Extension.swift */,
+				B933A815253E252F007C85BD /* ViewController+Extension.swift */,
+				B933A818253E25A7007C85BD /* Color+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B933A80C253E22CA007C85BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B933A7DD253E1CC6007C85BD /* ChatsListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B933A80D253E22D4007C85BD /* ChatsList */ = {
+			isa = PBXGroup;
+			children = (
+				B933A80C253E22CA007C85BD /* Controller */,
+			);
+			path = ChatsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,11 +215,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B933A7FC253E2134007C85BD /* StringConstants.swift in Sources */,
+				B933A813253E23E7007C85BD /* String+Extension.swift in Sources */,
 				B933A801253E219D007C85BD /*  Array+Extension.swift in Sources */,
+				B933A810253E23C2007C85BD /* View+Extension.swift in Sources */,
 				B933A808253E21F3007C85BD /* Collection+Extension.swift in Sources */,
 				B933A7DE253E1CC6007C85BD /* ChatsListViewController.swift in Sources */,
 				B933A7DA253E1CC6007C85BD /* AppDelegate.swift in Sources */,
 				B933A7DC253E1CC6007C85BD /* SceneDelegate.swift in Sources */,
+				B933A816253E252F007C85BD /* ViewController+Extension.swift in Sources */,
+				B933A819253E25A7007C85BD /* Color+Extension.swift in Sources */,
 				B933A7F7253E20D0007C85BD /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
