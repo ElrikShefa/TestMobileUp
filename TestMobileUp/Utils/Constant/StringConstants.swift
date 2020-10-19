@@ -11,4 +11,7 @@ struct StringConstants {
     static let title = "Messages"
     static let alertButton = "Close"
     static let errorTitle = "Error has occured"
+    
+    static let internetIsNotAvailable = "No internet connection"
+    static let serverNotResponding = "No connection to server. Please, try again later"
 }

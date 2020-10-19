@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Network
 
 class BaseVC: UIViewController {
     
     final var viewDidAppear = false
+    final let monitor = NWPathMonitor()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -59,7 +61,28 @@ extension BaseVC {
         
         present(alertController, animated: viewDidAppear, completion: completion)
     }
-
+    
+    final func monitorNetwork() {
+        monitor.pathUpdateHandler = { [weak self] path in
+            if path.status == .unsatisfied {
+                    self?.showAlert(message: StringConstants.internetIsNotAvailable)
+            }
+        }
+        
+        let gueue = DispatchQueue(label: "Network")
+        monitor.start(queue: gueue)
+    }
+    
+    final func monitorNetworkServer() {
+        monitor.pathUpdateHandler = { [weak self] path in
+            if path.status == .requiresConnection {
+                self?.showAlert(message: StringConstants.serverNotResponding)
+            }
+        }
+        
+        let gueue = DispatchQueue(label: "Network")
+        monitor.start(queue: gueue)
+    }
     
 }
 

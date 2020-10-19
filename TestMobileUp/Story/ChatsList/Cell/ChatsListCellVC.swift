@@ -9,6 +9,15 @@
 import UIKit
 
 final class ChatsListCellVC: UITableViewCell {
+    
+    var avatarImage: UIImage? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.avatarImageView.image = self.avatarImage
+            }
+        }
+    }
 
     @IBOutlet var currentDateTime: UILabel!
     @IBOutlet var userMessage: UILabel!
