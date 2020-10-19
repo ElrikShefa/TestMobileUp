@@ -10,6 +10,11 @@ import UIKit
 final class ChatsListViewController: BaseVC {
     
     //MARK: - private propertys
+    private typealias CellType = ChatsListCellVC
+    
+    private let heightCell: CGFloat = 76
+    
+    //MARK: - private propertys
     private lazy var tableView = UITableView()
 
 
@@ -18,7 +23,6 @@ final class ChatsListViewController: BaseVC {
         super.viewDidLoad()
         setupUI()
     }
-
 
 }
 
@@ -31,12 +35,16 @@ extension ChatsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: CellType.reuseIdentifier, for: indexPath)
     }
     
 }
 
 extension ChatsListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        heightCell
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -54,7 +62,7 @@ private extension ChatsListViewController {
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: CellType.nibName, bundle: nil), forCellReuseIdentifier: CellType.reuseIdentifier)
 
 
             view.addSubview(tableView)
