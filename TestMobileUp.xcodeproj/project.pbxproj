@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		B933A7DA253E1CC6007C85BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7D9253E1CC6007C85BD /* AppDelegate.swift */; };
 		B933A7DC253E1CC6007C85BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7DB253E1CC6007C85BD /* SceneDelegate.swift */; };
-		B933A7DE253E1CC6007C85BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7DD253E1CC6007C85BD /* ViewController.swift */; };
-		B933A7E1253E1CC6007C85BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B933A7DF253E1CC6007C85BD /* Main.storyboard */; };
+		B933A7DE253E1CC6007C85BD /* ChatsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7DD253E1CC6007C85BD /* ChatsListViewController.swift */; };
 		B933A7E3253E1CCB007C85BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B933A7E2253E1CCB007C85BD /* Assets.xcassets */; };
 		B933A7E6253E1CCB007C85BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B933A7E4253E1CCB007C85BD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +18,7 @@
 		B933A7D6253E1CC6007C85BD /* TestMobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B933A7D9253E1CC6007C85BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B933A7DB253E1CC6007C85BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B933A7DD253E1CC6007C85BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B933A7E0253E1CC6007C85BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B933A7DD253E1CC6007C85BD /* ChatsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListViewController.swift; sourceTree = "<group>"; };
 		B933A7E2253E1CCB007C85BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B933A7E5253E1CCB007C85BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B933A7E7253E1CCB007C85BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,30 @@
 		B933A7D8253E1CC6007C85BD /* TestMobileUp */ = {
 			isa = PBXGroup;
 			children = (
+				B933A7F3253E1F97007C85BD /* Story */,
+				B933A7F1253E1F85007C85BD /* Main files */,
+			);
+			path = TestMobileUp;
+			sourceTree = "<group>";
+		};
+		B933A7F1253E1F85007C85BD /* Main files */ = {
+			isa = PBXGroup;
+			children = (
 				B933A7D9253E1CC6007C85BD /* AppDelegate.swift */,
 				B933A7DB253E1CC6007C85BD /* SceneDelegate.swift */,
-				B933A7DD253E1CC6007C85BD /* ViewController.swift */,
-				B933A7DF253E1CC6007C85BD /* Main.storyboard */,
 				B933A7E2253E1CCB007C85BD /* Assets.xcassets */,
 				B933A7E4253E1CCB007C85BD /* LaunchScreen.storyboard */,
 				B933A7E7253E1CCB007C85BD /* Info.plist */,
 			);
-			path = TestMobileUp;
+			path = "Main files";
+			sourceTree = "<group>";
+		};
+		B933A7F3253E1F97007C85BD /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				B933A7DD253E1CC6007C85BD /* ChatsListViewController.swift */,
+			);
+			path = Story;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +108,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Matvey Chernyshov";
 				TargetAttributes = {
 					B933A7D5253E1CC6007C85BD = {
 						CreatedOnToolsVersion = 12.0;
@@ -126,7 +140,6 @@
 			files = (
 				B933A7E6253E1CCB007C85BD /* LaunchScreen.storyboard in Resources */,
 				B933A7E3253E1CCB007C85BD /* Assets.xcassets in Resources */,
-				B933A7E1253E1CC6007C85BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B933A7DE253E1CC6007C85BD /* ViewController.swift in Sources */,
+				B933A7DE253E1CC6007C85BD /* ChatsListViewController.swift in Sources */,
 				B933A7DA253E1CC6007C85BD /* AppDelegate.swift in Sources */,
 				B933A7DC253E1CC6007C85BD /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B933A7DF253E1CC6007C85BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B933A7E0253E1CC6007C85BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B933A7E4253E1CCB007C85BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +293,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G87NLXB66;
-				INFOPLIST_FILE = TestMobileUp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestMobileUp/Main files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G87NLXB66;
-				INFOPLIST_FILE = TestMobileUp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestMobileUp/Main files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
