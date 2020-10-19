@@ -25,6 +25,8 @@
 		B9DFEF98253E27C50047EA32 /* ChatsListCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DFEF97253E27C50047EA32 /* ChatsListCellVC.xib */; };
 		B9DFEF9E253E301E0047EA32 /* ChatsListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEF9D253E301E0047EA32 /* ChatsListAPI.swift */; };
 		B9DFEFA2253E30EE0047EA32 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFA1253E30ED0047EA32 /* NetworkSettings.swift */; };
+		B9DFEFA7253E31430047EA32 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFA6253E31430047EA32 /* Networking.swift */; };
+		B9DFEFAB253E317E0047EA32 /* ChatsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFAA253E317E0047EA32 /* ChatsError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		B9DFEF97253E27C50047EA32 /* ChatsListCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsListCellVC.xib; sourceTree = "<group>"; };
 		B9DFEF9D253E301E0047EA32 /* ChatsListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListAPI.swift; sourceTree = "<group>"; };
 		B9DFEFA1253E30ED0047EA32 /* NetworkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
+		B9DFEFA6253E31430047EA32 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		B9DFEFAA253E317E0047EA32 /* ChatsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			children = (
 				B9DFEF9D253E301E0047EA32 /* ChatsListAPI.swift */,
 				B9DFEFA1253E30ED0047EA32 /* NetworkSettings.swift */,
+				B9DFEFAA253E317E0047EA32 /* ChatsError.swift */,
+				B9DFEFA6253E31430047EA32 /* Networking.swift */,
 			);
 			path = "Network Service";
 			sourceTree = "<group>";
@@ -251,11 +257,13 @@
 				B933A801253E219D007C85BD /*  Array+Extension.swift in Sources */,
 				B933A810253E23C2007C85BD /* View+Extension.swift in Sources */,
 				B933A808253E21F3007C85BD /* Collection+Extension.swift in Sources */,
+				B9DFEFA7253E31430047EA32 /* Networking.swift in Sources */,
 				B933A7DE253E1CC6007C85BD /* ChatsListViewController.swift in Sources */,
 				B933A7DA253E1CC6007C85BD /* AppDelegate.swift in Sources */,
 				B9DFEF95253E278F0047EA32 /* Image+Extension.swift in Sources */,
 				B933A7DC253E1CC6007C85BD /* SceneDelegate.swift in Sources */,
 				B9DFEF9E253E301E0047EA32 /* ChatsListAPI.swift in Sources */,
+				B9DFEFAB253E317E0047EA32 /* ChatsError.swift in Sources */,
 				B9DFEFA2253E30EE0047EA32 /* NetworkSettings.swift in Sources */,
 				B933A816253E252F007C85BD /* ViewController+Extension.swift in Sources */,
 				B9DFEF90253E26FE0047EA32 /* ChatsListCellVC.swift in Sources */,
