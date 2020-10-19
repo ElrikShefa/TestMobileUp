@@ -27,6 +27,9 @@
 		B9DFEFA2253E30EE0047EA32 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFA1253E30ED0047EA32 /* NetworkSettings.swift */; };
 		B9DFEFA7253E31430047EA32 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFA6253E31430047EA32 /* Networking.swift */; };
 		B9DFEFAB253E317E0047EA32 /* ChatsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFAA253E317E0047EA32 /* ChatsError.swift */; };
+		B9DFEFB0253E32B10047EA32 /* ChatsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFAF253E32B10047EA32 /* ChatsListResponse.swift */; };
+		B9DFEFB4253E32DF0047EA32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFB3253E32DF0047EA32 /* User.swift */; };
+		B9DFEFB9253E330C0047EA32 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFB8253E330C0047EA32 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		B9DFEFA1253E30ED0047EA32 /* NetworkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
 		B9DFEFA6253E31430047EA32 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B9DFEFAA253E317E0047EA32 /* ChatsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsError.swift; sourceTree = "<group>"; };
+		B9DFEFAF253E32B10047EA32 /* ChatsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListResponse.swift; sourceTree = "<group>"; };
+		B9DFEFB3253E32DF0047EA32 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B9DFEFB8253E330C0047EA32 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		B933A7F3253E1F97007C85BD /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				B9DFEFAE253E329D0047EA32 /* Model */,
 				B933A80D253E22D4007C85BD /* ChatsList */,
 			);
 			path = Story;
@@ -179,6 +186,16 @@
 				B9DFEFA6253E31430047EA32 /* Networking.swift */,
 			);
 			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		B9DFEFAE253E329D0047EA32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B9DFEFAF253E32B10047EA32 /* ChatsListResponse.swift */,
+				B9DFEFB3253E32DF0047EA32 /* User.swift */,
+				B9DFEFB8253E330C0047EA32 /* Message.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +274,10 @@
 				B933A801253E219D007C85BD /*  Array+Extension.swift in Sources */,
 				B933A810253E23C2007C85BD /* View+Extension.swift in Sources */,
 				B933A808253E21F3007C85BD /* Collection+Extension.swift in Sources */,
+				B9DFEFB9253E330C0047EA32 /* Message.swift in Sources */,
 				B9DFEFA7253E31430047EA32 /* Networking.swift in Sources */,
 				B933A7DE253E1CC6007C85BD /* ChatsListViewController.swift in Sources */,
+				B9DFEFB0253E32B10047EA32 /* ChatsListResponse.swift in Sources */,
 				B933A7DA253E1CC6007C85BD /* AppDelegate.swift in Sources */,
 				B9DFEF95253E278F0047EA32 /* Image+Extension.swift in Sources */,
 				B933A7DC253E1CC6007C85BD /* SceneDelegate.swift in Sources */,
@@ -268,6 +287,7 @@
 				B933A816253E252F007C85BD /* ViewController+Extension.swift in Sources */,
 				B9DFEF90253E26FE0047EA32 /* ChatsListCellVC.swift in Sources */,
 				B933A819253E25A7007C85BD /* Color+Extension.swift in Sources */,
+				B9DFEFB4253E32DF0047EA32 /* User.swift in Sources */,
 				B933A7F7253E20D0007C85BD /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

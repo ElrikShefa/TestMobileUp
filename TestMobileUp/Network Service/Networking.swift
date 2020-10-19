@@ -13,7 +13,7 @@ enum Networking {}
 extension Networking {
     
     static func getChat(
-        onSuccess: @escaping () -> Void,
+        onSuccess: @escaping ([ChatsListResponse]) -> Void,
         onFailure: @escaping (ChatsError) -> Void,
         url: URL?
     ) {
@@ -32,7 +32,7 @@ extension Networking {
             }
             
             do {
-                let result = try JSONDecoder().decode(.self, from: data)
+                let result = try JSONDecoder().decode([ChatsListResponse].self, from: data)
                 
                 onSuccess(result.map{ $0 })
             } catch let jsonDecodingError {
