@@ -7,10 +7,11 @@
 
 import UIKit
 
-final class ChatsListViewController: UIViewController {
+final class ChatsListViewController: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .blue
     }
 
 

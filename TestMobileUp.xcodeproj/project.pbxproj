@@ -12,6 +12,10 @@
 		B933A7DE253E1CC6007C85BD /* ChatsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7DD253E1CC6007C85BD /* ChatsListViewController.swift */; };
 		B933A7E3253E1CCB007C85BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B933A7E2253E1CCB007C85BD /* Assets.xcassets */; };
 		B933A7E6253E1CCB007C85BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B933A7E4253E1CCB007C85BD /* LaunchScreen.storyboard */; };
+		B933A7F7253E20D0007C85BD /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7F6253E20D0007C85BD /* BaseVC.swift */; };
+		B933A7FC253E2134007C85BD /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A7FB253E2134007C85BD /* StringConstants.swift */; };
+		B933A801253E219D007C85BD /*  Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A800253E219D007C85BD /*  Array+Extension.swift */; };
+		B933A808253E21F3007C85BD /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B933A807253E21F3007C85BD /* Collection+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		B933A7E2253E1CCB007C85BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B933A7E5253E1CCB007C85BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B933A7E7253E1CCB007C85BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B933A7F6253E20D0007C85BD /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		B933A7FB253E2134007C85BD /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		B933A800253E219D007C85BD /*  Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Array+Extension.swift"; sourceTree = "<group>"; };
+		B933A807253E21F3007C85BD /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				B933A7F3253E1F97007C85BD /* Story */,
+				B933A7F9253E20F9007C85BD /* Utils */,
 				B933A7F1253E1F85007C85BD /* Main files */,
 			);
 			path = TestMobileUp;
@@ -78,6 +87,33 @@
 				B933A7DD253E1CC6007C85BD /* ChatsListViewController.swift */,
 			);
 			path = Story;
+			sourceTree = "<group>";
+		};
+		B933A7F9253E20F9007C85BD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B933A804253E21A6007C85BD /* Extensions */,
+				B933A7FF253E216E007C85BD /* Constant */,
+				B933A7F6253E20D0007C85BD /* BaseVC.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B933A7FF253E216E007C85BD /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				B933A7FB253E2134007C85BD /* StringConstants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		B933A804253E21A6007C85BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B933A800253E219D007C85BD /*  Array+Extension.swift */,
+				B933A807253E21F3007C85BD /* Collection+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B933A7FC253E2134007C85BD /* StringConstants.swift in Sources */,
+				B933A801253E219D007C85BD /*  Array+Extension.swift in Sources */,
+				B933A808253E21F3007C85BD /* Collection+Extension.swift in Sources */,
 				B933A7DE253E1CC6007C85BD /* ChatsListViewController.swift in Sources */,
 				B933A7DA253E1CC6007C85BD /* AppDelegate.swift in Sources */,
 				B933A7DC253E1CC6007C85BD /* SceneDelegate.swift in Sources */,
+				B933A7F7253E20D0007C85BD /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
