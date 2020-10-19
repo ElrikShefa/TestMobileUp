@@ -38,16 +38,22 @@ final class ChatsListCellVC: UITableViewCell {
         super.prepareForReuse()
         initials()
     }
+    
+    func set(nickname: String, message: String, date: String) {
+        userNickname.text = nickname
+        userMessage.text = message
+        currentDateTime.text = date
+    }
 
 }
 
 private extension ChatsListCellVC  {
     
     func initials() {
-//        avatarImageView.image = nil
-//        userMessage.text = nil
-//        userNickname.text = nil
-//        currentDateTime.text = nil
+        avatarImageView.image = nil
+        userMessage.text = nil
+        userNickname.text = nil
+        currentDateTime.text = nil
         chevroneView.image = UIImage(systemIcon: .chevron)
     }
 }

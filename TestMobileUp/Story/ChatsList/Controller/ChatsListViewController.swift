@@ -44,8 +44,22 @@ extension ChatsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        return tableView.dequeueReusableCell(withIdentifier: CellType.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellType.reuseIdentifier, for: indexPath)
+        
+        guard
+            let castedCell = cell as? CellType,
+            let chat = chatsList[safe: indexPath.row]
+        else { return cell}
+        
+        if let url = URL(string: chat.user.avatarUrl) {
+            setupImage(imageURL: url, cell: castedCell)
+        } else {
+            castedCell.avatarImage = UIImage(named: "Empty avatar")
+        }
+        
+        castedCell.set(nickname: chat.user.nickname, message: chat.message.text, date: "11.11")
+        
+        return castedCell
     }
     
 }
