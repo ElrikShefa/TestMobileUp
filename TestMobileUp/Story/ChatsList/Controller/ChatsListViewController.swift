@@ -56,8 +56,9 @@ extension ChatsListViewController: UITableViewDataSource {
         
         guard
             let castedCell = cell as? CellType,
-            let chat = chatsList[safe: indexPath.row]
-        else { return cell}
+            let chat = chatsList[safe: indexPath.row],
+            let date = chat.message.receivingDate.date
+            else { return cell}
         
         if let url = URL(string: chat.user.avatarUrl) {
             setupImage(imageURL: url, cell: castedCell)
@@ -65,7 +66,7 @@ extension ChatsListViewController: UITableViewDataSource {
             castedCell.avatarImage = UIImage(named: "Empty avatar")
         }
         
-        castedCell.set(nickname: chat.user.nickname, message: chat.message.text, date: "11.11")
+        castedCell.set(nickname: chat.user.nickname, message: chat.message.text, date: date.formatRelativeString())
         
         return castedCell
     }
