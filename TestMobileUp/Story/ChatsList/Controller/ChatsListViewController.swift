@@ -48,6 +48,11 @@ final class ChatsListViewController: BaseVC {
 extension ChatsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
+        if chatsList.count == 0 {
+            self.tableView.setEmptyMessage(StringConstants.nothingFound)
+        } else {
+            self.tableView.restore()
+        }
         return chatsList.count
     }
     

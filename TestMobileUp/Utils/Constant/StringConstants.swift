@@ -10,6 +10,7 @@ struct StringConstants {
     
     static let title = "Messages"
     static let loading = "loading..."
+    static let nothingFound = "Nothing found"
     
     static let alertButton = "Close"
     static let errorTitle = "Error has occured"
