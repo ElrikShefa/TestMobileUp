@@ -40,4 +40,6 @@ extension UIViewController {
             navigationController?.navigationBar.isTranslucent = false
             navigationItem.title = title
         }
-    }}
+    }
+    
+}

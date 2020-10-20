@@ -13,8 +13,5 @@ extension String {
     var url: URL? {
         return URL(string: self)
     }
-    
-    var isNotEmptyWithoutWhiteSpacesAndNewlines: Bool {
-        return self.trimmingCharacters(in: .whitespacesAndNewlines).isNotEmpty
-    }
+
 }
