@@ -9,6 +9,15 @@
 import UIKit
 
 final class ChatsListCellVC: UITableViewCell {
+    
+    var avatarImage: UIImage? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.avatarImageView.image = self.avatarImage
+            }
+        }
+    }
 
     @IBOutlet var currentDateTime: UILabel!
     @IBOutlet var userMessage: UILabel!
@@ -29,16 +38,22 @@ final class ChatsListCellVC: UITableViewCell {
         super.prepareForReuse()
         initials()
     }
+    
+    func set(nickname: String, message: String, date: String) {
+        userNickname.text = nickname
+        userMessage.text = message
+        currentDateTime.text = date
+    }
 
 }
 
 private extension ChatsListCellVC  {
     
     func initials() {
-//        avatarImageView.image = nil
-//        userMessage.text = nil
-//        userNickname.text = nil
-//        currentDateTime.text = nil
+        avatarImageView.image = nil
+        userMessage.text = nil
+        userNickname.text = nil
+        currentDateTime.text = nil
         chevroneView.image = UIImage(systemIcon: .chevron)
     }
 }

@@ -30,6 +30,7 @@
 		B9DFEFB0253E32B10047EA32 /* ChatsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFAF253E32B10047EA32 /* ChatsListResponse.swift */; };
 		B9DFEFB4253E32DF0047EA32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFB3253E32DF0047EA32 /* User.swift */; };
 		B9DFEFB9253E330C0047EA32 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFB8253E330C0047EA32 /* Message.swift */; };
+		B9DFEFBF253EB98D0047EA32 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DFEFBE253EB98D0047EA32 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B9DFEFAF253E32B10047EA32 /* ChatsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListResponse.swift; sourceTree = "<group>"; };
 		B9DFEFB3253E32DF0047EA32 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B9DFEFB8253E330C0047EA32 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B9DFEFBE253EB98D0047EA32 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				B933A815253E252F007C85BD /* ViewController+Extension.swift */,
 				B933A818253E25A7007C85BD /* Color+Extension.swift */,
 				B9DFEF94253E278F0047EA32 /* Image+Extension.swift */,
+				B9DFEFBE253EB98D0047EA32 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				B9DFEFAB253E317E0047EA32 /* ChatsError.swift in Sources */,
 				B9DFEFA2253E30EE0047EA32 /* NetworkSettings.swift in Sources */,
 				B933A816253E252F007C85BD /* ViewController+Extension.swift in Sources */,
+				B9DFEFBF253EB98D0047EA32 /* Date+Extension.swift in Sources */,
 				B9DFEF90253E26FE0047EA32 /* ChatsListCellVC.swift in Sources */,
 				B933A819253E25A7007C85BD /* Color+Extension.swift in Sources */,
 				B9DFEFB4253E32DF0047EA32 /* User.swift in Sources */,
