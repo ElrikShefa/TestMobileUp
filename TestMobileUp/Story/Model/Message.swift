@@ -13,10 +13,10 @@ struct Message: Decodable {
     
     let text: String
     let receivingDate: String
-
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-
+        
         self.text = try container.decode(String.self, forKey: .text)
         self.receivingDate = try container.decode(String.self, forKey: .receivingDate)
     }

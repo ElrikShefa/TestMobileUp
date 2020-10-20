@@ -18,36 +18,35 @@ final class ChatsListViewController: BaseVC {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 
-                let chatsListAreNotEmpty = self.chatsList.isNotEmpty
-                
-                self.emptyViewActivityIndicator.isHidden = chatsListAreNotEmpty
-                self.emptyViewLabel.isHidden = chatsListAreNotEmpty
-                self.tableView.isHidden = !chatsListAreNotEmpty
-                
                 self.tableView.reloadData()
             }
         }
     }
     
-    //MARK: - private propertys
+    //MARK: - private UI propertys
     private lazy var tableView = UITableView()
     private lazy var refreshControl = UIRefreshControl()
     private lazy var emptyViewActivityIndicator = UIActivityIndicatorView(style: .medium)
     private lazy var emptyViewLabel = UILabel()
-
+    
     //MARK: - method lIfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         loadChatsList()
     }
-
+    
 }
 
 //MARK: - tableView protocols
 extension ChatsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
+        if chatsList.count == 0 {
+            self.tableView.setEmptyMessage(StringConstants.nothingFound)
+        } else {
+            self.tableView.restore()
+        }
         return chatsList.count
     }
     
@@ -58,7 +57,7 @@ extension ChatsListViewController: UITableViewDataSource {
             let castedCell = cell as? CellType,
             let chat = chatsList[safe: indexPath.row],
             let date = chat.message.receivingDate.date
-            else { return cell}
+        else { return cell}
         
         if let url = URL(string: chat.user.avatarUrl) {
             setupImage(imageURL: url, cell: castedCell)
@@ -78,7 +77,7 @@ extension ChatsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         heightCell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -128,6 +127,12 @@ private extension ChatsListViewController {
         Networking.getChat(onSuccess: { [weak self] receivedСhatsList in
             guard let self = self else { return }
             self.chatsList = receivedСhatsList.map{$0}
+            
+            DispatchQueue.main.async {
+                self.emptyViewActivityIndicator.isHidden = true
+                self.emptyViewLabel.isHidden = true
+                self.tableView.isHidden = false
+            }
         },
         onFailure: { [weak self] error in
             guard let self = self else { return }
@@ -139,7 +144,7 @@ private extension ChatsListViewController {
                 
             case .serverNotResponding:
                 self.monitorNetworkServer()
-            
+                
             case .jsonDecodingError(let jsonDecodingError):
                 self.showAlert(message: jsonDecodingError.localizedDescription)
                 
@@ -167,7 +172,7 @@ private extension ChatsListViewController {
                     
                 case .serverNotResponding:
                     self.monitorNetworkServer()
-            
+                    
                 case .jsonDecodingError(let jsonDecodingError):
                     self.showAlert(message: jsonDecodingError.localizedDescription)
                     

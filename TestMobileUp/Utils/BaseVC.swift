@@ -65,7 +65,7 @@ extension BaseVC {
     final func monitorNetwork() {
         monitor.pathUpdateHandler = { [weak self] path in
             if path.status == .unsatisfied {
-                    self?.showAlert(message: StringConstants.internetIsNotAvailable)
+                self?.showAlert(message: StringConstants.internetIsNotAvailable)
             }
         }
         
